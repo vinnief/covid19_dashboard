@@ -40,9 +40,9 @@ updateData <- function() {
 updateData()
 
 # TODO: Still throws a warning but works for now
-data_confirmed <- read_csv("data/time_series_19-covid-Confirmed.csv")
-data_deceased  <- read_csv("data/time_series_19-covid-Deaths.csv")
-data_recovered <- read_csv("data/time_series_19-covid-Recovered.csv")
+data_confirmed <- read_csv("data/time_series_covid19_confirmed_global.csv")
+data_deceased  <- read_csv("data/time_series_covid19_deaths_global.csv")
+data_recovered <- read_csv("data/time_series_covid19_recovered_global.csv")
 
 # Get latest data
 current_date <- as.Date(names(data_confirmed)[ncol(data_confirmed)], format = "%m/%d/%y")
@@ -123,3 +123,4 @@ top5_countries <- data_evolution %>%
   top_n(5) %>%
   select(`Country/Region`) %>%
   pull()
+
